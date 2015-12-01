@@ -1,0 +1,6 @@
+M*.hs
+main.hs
+
+# GHCJS artifacts
+*.js_*
+*.jsexe

@@ -58,7 +58,7 @@ writeMainModule n = do
     imports = mconcat $ map (\n->"import qualified "<>modName n<>"\n") [1..n]
 
 compileCode :: IO (ExitCode, String, String)
-compileCode = readProcessWithExitCode "ghcjs" ["-O", "-isrc", "src/main.hs"] ""
+compileCode = readProcessWithExitCode "stack" ["exec", "ghcjs", "--", "-O", "-isrc", "src/main.hs"] ""
 
 main :: IO ()
 main = do
