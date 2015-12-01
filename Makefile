@@ -18,4 +18,4 @@ filter-pandoc: pandoc-filter/filter.hs
 .PHONY: clean
 
 clean:
-	rm -rf *~ src/M* src/main.* src/*.js_*
+	rm -rf *~ src/M* src/main.* src/*.js_* filter
