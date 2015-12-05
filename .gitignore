@@ -2,6 +2,9 @@
 .stack-work
 
 # Build artifacts
-
 filter
 index.html
+sass/*.css
+
+# node stuff
+node_modules

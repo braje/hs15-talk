@@ -1,14 +1,22 @@
 # For more information, see: https://github.com/commercialhaskell/stack/blob/release/doc/yaml_configuration.md
 
 # Specifies the GHC version and set of packages available (e.g., lts-3.5, nightly-2015-09-21, ghc-7.10.2)
-resolver: lts-3.13
+resolver: lts-3.16
 
 # Local packages, usually specified by relative directory name
 packages:
-- '.'
+- location: '.'
+- location:
+    git: https://github.com/ryantrinkle/reflex-dom.git
+    commit: f4dbdd799260bc203f7f5cdce18362cb896f6d57 # ghcjs-improved-base-2 branch
+  extra-dep: true
 
 # Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
-extra-deps: []
+extra-deps:
+  - reflex-0.3.2
+  - ref-tf-0.4
+  - these-0.6.1.0
+  - ghcjs-dom-0.2.3.0
 
 # Override default flag values for local packages and extra-deps
 flags: {}
@@ -31,10 +39,34 @@ extra-package-dbs: []
 # extra-include-dirs: [/path/to/dir]
 # extra-lib-dirs: [/path/to/dir]
 
+# compiler: ghcjs-0.2.0.20151029_ghc-7.10.2
+# compiler-check: match-exact
+# setup-info:
+#   ghcjs:
+#       source:
+#             ghcjs-0.2.0.20151029_ghc-7.10.2:
+#                     url: "https://github.com/nrolland/ghcjs/releases/download/v0.2.0.20151029/ghcjs-0.2.0.20151029.tar.gz"
+
+# compiler: ghcjs-0.2.0.20151007_ghc-7.10.2
+# compiler-check: match-exact
+# setup-info:
+#   ghcjs:
+#     source:
+#       ghcjs-0.2.0.20151007_ghc-7.10.2:
+#         url: "http://localhost:8000/ghcjs-0.2.0.20151007.tar.gz"
+
+# compiler: ghcjs-0.2.0.20151001_ghc-7.10.2
+# compiler-check: match-exact
+# setup-info:
+#   ghcjs:
+#     source:
+#       ghcjs-0.2.0.20151001_ghc-7.10.2:
+#         url: "https://github.com/fizruk/ghcjs/releases/download/v0.2.0.20151001/ghcjs-0.2.0.20151001.tar.gz"
+
 compiler: ghcjs-0.2.0.20151029_ghc-7.10.2
 compiler-check: match-exact
 setup-info:
   ghcjs:
-      source:
-            ghcjs-0.2.0.20151029_ghc-7.10.2:
-                    url: "https://github.com/nrolland/ghcjs/releases/download/v0.2.0.20151029/ghcjs-0.2.0.20151029.tar.gz"
+    source:
+      ghcjs-0.2.0.20151029_ghc-7.10.2:
+        url: "https://github.com/nrolland/ghcjs/releases/download/v0.2.0.20151029/ghcjs-0.2.0.20151029.tar.gz"

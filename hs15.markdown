@@ -4,71 +4,30 @@ author: Luite Stegeman
 tags: [Haskell, functional programming, JavaScript, web, GHCJS]
 abstract: |
   Haskell Symposium 2015
-...
+theme: braje-white
+width: 1280
+height: 720
+highlighting-css: false
+css: ['css/hk-espresso.css', 'css/custom.css']
+controls: false
+slideNumber: true
+---
 
 # GHCJS
 
-----------------------------
+ * Covering
+ * Some
+ * Stuff
 
-## Features
+# Run Haskell
 
-* Threads
-* STM
-* Template Haskell
-
-Recent
-
-* base library rewrite
-* Profiling (Heap / CPU)
-* GHCJSi REPL
-
-**Soon:** Better optimizer / ES2015 tail calls
-
-----------------------------
-
-## Installation
-
-Use GHC 7.10.2 (MinGHC on Windows):
-
-```
-$ cabal install http://ghcjs.luite.com/improved-base.tar.gz
-$ ghcjs-boot
-```
-
-
-----------------------------
-
-## How To Use
-
-Stand-alone:
-
-```
-$ ghcjs -O hello.hs
-$ node hello.jsexe/all.js
-Hello, World!
-```
-
-Cabal:
-
-```
-$ cabal install --ghcjs package
-```
-
-----------------------------
-
-# Examples
-
-----------------------------
-
-## Run Haskell
-
-```{.runhaskell}
+```{.ghcjs}
 start ref = staticText ref (take 30 (show fibs) ++ "...")
 ---
 fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
 ```
 
-## Run Haskell
+# Run Haskell
 
 ```{.haskell}
 start ref = staticText ref (take 30 (show fibs) ++ "...")
@@ -76,9 +35,7 @@ start ref = staticText ref (take 30 (show fibs) ++ "...")
 fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
 ```
 
-----------------------------
-
-## Run Haskell
+# Run Haskell
 
 ```{.haskell}
 start ref = dynamicText ref "10" (show . (fibs!!) . read)
@@ -86,45 +43,17 @@ start ref = dynamicText ref "10" (show . (fibs!!) . read)
 fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
 ```
 
-----------------------------
+# Run Haskell
 
-## Run Haskell
-
-```{.runhaskell}
+```{.ghcjs}
 start ref = dynamicText ref "10" (show . (fibs!!) . read)
 ---
 fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
 ```
 
-----------------------------
+# Run Reflex
 
-## Credits
-
-Brent Yorgey
-
-* Factorization Diagrams
-* Tournament Graph
-* Apollonian Gasket
-
-Pontus Granström
-
-* Tangent and Normal
-
-----------------------------
-
-# Conclusion
-
-----------------------------
-
-## Conclusion
-
-Install GHCJS with GHC 7.10.2 and help test **improved-base**
-
+```{.reflex}
+start :: MonadWidget t m => m ()
+start = el "div" $ text "If you really have to ask..."
 ```
-$ cabal install http://ghcjs.luite.com/improved-base.tar.gz
-$ ghcjs-boot
-```
-
-Code for the slides will be available from my Github
-
-[http://github.com/luite/hs15-talk](http://github.com/luite/hs15-talk)

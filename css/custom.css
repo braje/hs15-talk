@@ -1,0 +1,14 @@
+/* tweak the size of the code font and eliminate box shadow */
+.reveal .slides section pre {
+  font-size: 0.65em;
+  box-shadow: none;
+}
+
+/* Some styling for the div in which the ghcjs or reflex
+ * code gets rendered
+ */
+.reveal .slides section div.runCode {
+    padding: 1em;
+    background: #d2b9d3;
+    border-radius: 15px;
+}

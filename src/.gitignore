@@ -1,4 +1,6 @@
 M*.hs
+R*.hs
+
 main.hs
 
 # GHCJS artifacts

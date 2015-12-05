@@ -1,14 +1,14 @@
 module Main where
 
 import Control.Concurrent
+import CommonReflex
 
 $imports
 
+runInit :: [IO ()]
 $runinit
 
 main = do
   putStrLn "code loaded"
   threadDelay 500000
-  runInit
-
-
+  sequence_ runInit
