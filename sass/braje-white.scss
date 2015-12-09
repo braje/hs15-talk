@@ -5,8 +5,8 @@
  */
 
 // Default mixins and settings -----------------
-@import "reveal.js/css/theme/template/mixins";
-@import "reveal.js/css/theme/template/settings";
+@import "../reveal.js/css/theme/template/mixins";
+@import "../reveal.js/css/theme/template/settings";
 // ---------------------------------------------
 
 // Include theme-specific fonts
@@ -55,5 +55,5 @@ body {
 }
 
 // Theme template ------------------------------
-@import "reveal.js/css/theme/template/theme";
+@import "../reveal.js/css/theme/template/theme";
 // ---------------------------------------------

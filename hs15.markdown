@@ -1,9 +1,8 @@
 ---
-title: 'A Lightning Talk with GHCJS'
-author: Luite Stegeman
+title: 'Haskell with Reveal'
+subtitle: 'Using Ghcjs and/or Reflex in Reveal.js Presentations'
+author: Timothy Braje
 tags: [Haskell, functional programming, JavaScript, web, GHCJS]
-abstract: |
-  Haskell Symposium 2015
 theme: braje-white
 width: 1280
 height: 720
